@@ -19,8 +19,10 @@ app.post('/', (req, res) => {
     bot.on(message('text'), (ctx) => {
         ctx.reply('ok apapapun itu')
     })
-    
-    bot.launch()
+    bot.launch({
+        webhook: "https://bot-netlify.vercel.app/",
+        port:4000,
+    })
     console.log(req.json);
     console.log('post called');
     return res.json(req.body);
