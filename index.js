@@ -7,9 +7,9 @@ let app = express();
 let router = express.Router()
 
 let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
-    bot.on(message('text'), (ctx) => {
-        ctx.reply('ok apapapun itu')
-    })
+//     bot.on(message('text'), (ctx) => {
+//         ctx.reply('ok apapapun itu')
+//     })
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 
@@ -47,14 +47,14 @@ bot.use(async (ctx, next) => {
     console.log('Response time: %sms', ms)
 })
 
-app.post('/telegraf/:id', (req, res) => {
-    bot.on(message('text'), (ctx) => {
-        ctx.reply('ok apapapun itu')
-    })
-    bot.launch()
-    console.log('telegraf path called')
-    console.log(req.body)
-})
+// app.post('/telegraf/:id', (req, res) => {
+//     bot.on(message('text'), (ctx) => {
+//         ctx.reply('ok apapapun itu')
+//     })
+//     bot.launch()
+//     console.log('telegraf path called')
+//     console.log(req.body)
+// })
 
 
 app.get('/', (req, res) => {
