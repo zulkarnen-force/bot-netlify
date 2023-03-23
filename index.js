@@ -73,7 +73,7 @@ app.get('/', (req, res) => {
 
 bot.launch({
     webhook: { 
-        domain: "https://bot-netlify.vercel.app/",
+        domain: "https://bot-netlify.vercel.app/api/test/",
         port:8000
     }
 })
