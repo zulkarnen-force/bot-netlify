@@ -43,13 +43,13 @@ app.post('/', (req, res) => {
 
 })
 
-bot.use(async (ctx, next) => {
-    const start = new Date()
-    await next()
-    const ms = new Date() - start
-    console.log('Response time: %sms', ms)
-    console.log(ctx)
-})
+// bot.use(async (ctx, next) => {
+//     const start = new Date()
+//     await next()
+//     const ms = new Date() - start
+//     console.log('Response time: %sms', ms)
+//     console.log(ctx)
+// })
 
 // app.post('/telegraf/:id', (req, res) => {
 //     bot.on(message('text'), (ctx) => {
