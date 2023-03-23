@@ -24,6 +24,7 @@ app.post('/secret-path', (req, res) => {
     bot.on(message('text'), (ctx) => {
         ctx.reply('ok apapapun itu')
     })
+    bot.launch();
 })
 
 app.post('/', (req, res) => {
