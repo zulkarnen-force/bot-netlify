@@ -16,21 +16,32 @@ app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({ extended: true }));
 
+app.use(bot.webhookCallback('/secret-path'));
+bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
+
+
 app.post('/', (req, res) => {
 
-    let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
-    bot.on(message('text'), (ctx) => {
-        ctx.reply('ok apapapun itu')
-    })
-    bot.launch({
-        webhook: "https://bot-netlify.vercel.app/",
-        port:4000,
-    })
-    console.log(req.json);
+    // let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
+    // bot.on(message('text'), (ctx) => {
+    //     ctx.reply('ok apapapun itu')
+    // })
+    // bot.launch({
+    //     webhook: "https://bot-netlify.vercel.app/",
+    //     port:4000,
+    // })
+    // console.log(req.json);
     console.log('post called');
-    return res.json(req.body);
+    // return res.json(req.body);
+
 })
 
+bot.use(async (ctx, next) => {
+    const start = new Date()
+    await next()
+    const ms = new Date() - start
+    console.log('Response time: %sms', ms)
+})
 
 app.post('/telegraf/:id', (req, res) => {
     bot.on(message('text'), (ctx) => {
