@@ -56,12 +56,9 @@ app.post('/', (req, res) => {
 app.post('/test/hook/path', (req, res) => {
     
     bot.on(message('text'), (ctx) => {
-        ctx.reply('zulkarnen ganteng sekali wkwk' + req.params.id)
+        return ctx.reply(`server vercel ${ctx.message.text}`)
     })
-    // bot.launch()
-    console.log('telegraf path called')
-    console.log(req.body)
-
+   
     bot.launch();
 
 })
