@@ -53,7 +53,7 @@ app.post('/', (req, res) => {
 //     console.log(ctx)
 // })
 
-app.post('/telegraf/:id', (req, res) => {
+app.post('/test/hook/path', (req, res) => {
     
     bot.on(message('text'), (ctx) => {
         ctx.reply('zulkarnen ganteng sekali wkwk' + req.params.id)
