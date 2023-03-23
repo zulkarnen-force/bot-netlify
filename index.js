@@ -15,6 +15,10 @@ app.post('/', (req, res) => {
     return res.json(req.body);
 })
 
+app.get('/', (req, res) => {
+    return res.json('ok');
+})
+
 app.listen(port, () => {
     console.log('server running')
 })
