@@ -31,8 +31,14 @@ app.post('/', (req, res) => {
     return res.json(req.body);
 })
 
+
+app.post('/telegraf/:id', (req, res) => {
+    console.log('telegraf path called')
+    console.log(req.body)
+})
+
+
 app.get('/', (req, res) => {
-    
     return res.json('ok');
 })
 
