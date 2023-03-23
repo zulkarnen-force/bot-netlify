@@ -23,7 +23,7 @@ bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
 app.post('/secret-path', (req, res) => {
     
     bot.on(message('text'), (ctx) => {
-        ctx.reply('zulkarnen sangat ganteng')
+        return ctx.reply('zulkarnen sangat ganteng')
     })
 
     bot.launch();
