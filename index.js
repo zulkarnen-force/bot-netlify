@@ -21,14 +21,17 @@ bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
 
 
 app.post('/secret-path', (req, res) => {
+    
     bot.on(message('text'), (ctx) => {
         ctx.reply('ok apapapun itu')
     })
+
     bot.launch();
 })
 
+
 app.post('/', (req, res) => {
-    console.log(req.body);
+    // console.log(req.body);
 
     // let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
     // bot.on(message('text'), (ctx) => {
@@ -62,13 +65,14 @@ app.post('/', (req, res) => {
 
 
 app.get('/', (req, res) => {
-    return res.json('ok');
+    // return res.json('ok');
 })
 
 // bot.launch({
-//     webhook:{ domain: "https://bot-netlify.vercel.app/",
-// port:8000
-// }
+//     webhook: { 
+//         domain: "https://bot-netlify.vercel.app/",
+//         port:8000
+//     }
 // })
 
 app.listen(port, () => {
