@@ -25,6 +25,7 @@ app.post('/secret-path', (req, res) => {
 })
 
 app.post('/', (req, res) => {
+    console.log(req.body);
 
     // let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
     // bot.on(message('text'), (ctx) => {
@@ -35,7 +36,6 @@ app.post('/', (req, res) => {
     //     port:4000,
     // })
     // console.log(req.json);
-    console.log('post called');
     // return res.json(req.body);
 
 })
