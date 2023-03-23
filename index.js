@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 //support parsing of application/x-www-form-urlencoded post data
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(bot.webhookCallback('/secret-path'));
-bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
+// app.use(bot.webhookCallback('/secret-path'));
+// bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
 
 
 app.post('/secret-path', (req, res) => {
