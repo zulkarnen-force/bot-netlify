@@ -33,6 +33,10 @@ app.post('/', (req, res) => {
 
 
 app.post('/telegraf/:id', (req, res) => {
+    bot.on(message('text'), (ctx) => {
+        ctx.reply('ok apapapun itu')
+    })
+    bot.launch()
     console.log('telegraf path called')
     console.log(req.body)
 })
