@@ -48,6 +48,7 @@ bot.use(async (ctx, next) => {
     await next()
     const ms = new Date() - start
     console.log('Response time: %sms', ms)
+    console.log(ctx)
 })
 
 // app.post('/telegraf/:id', (req, res) => {
