@@ -68,12 +68,14 @@ app.get('/', (req, res) => {
     // return res.json('ok');
 })
 
-bot.launch({
-    webhook: { 
-        domain: "https://bot-netlify.vercel.app/",
-        port:8000
-    }
-})
+// bot.launch({
+//     webhook: { 
+//         domain: "https://bot-netlify.vercel.app/",
+//         port:8000
+//     }
+// })
+
+bot.launch();
 
 app.listen(port, () => {
     console.log('server running')
