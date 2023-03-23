@@ -20,6 +20,10 @@ app.use(bot.webhookCallback('/secret-path'));
 bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
 
 
+app.post('/secret-path', (req, res) => {
+    console.log(req.body);
+})
+
 app.post('/', (req, res) => {
 
     // let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
@@ -57,11 +61,11 @@ app.get('/', (req, res) => {
     return res.json('ok');
 })
 
-bot.launch({
-    webhook:{ domain: "https://bot-netlify.vercel.app/",
-port:8000
-}
-})
+// bot.launch({
+//     webhook:{ domain: "https://bot-netlify.vercel.app/",
+// port:8000
+// }
+// })
 
 app.listen(port, () => {
     console.log('server running')
