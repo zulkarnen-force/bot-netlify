@@ -54,26 +54,26 @@ app.post('/', (req, res) => {
 //     console.log(ctx)
 // })
 
-// app.post('/telegraf/:id', (req, res) => {
-//     bot.on(message('text'), (ctx) => {
-//         ctx.reply('ok apapapun itu')
-//     })
-//     bot.launch()
-//     console.log('telegraf path called')
-//     console.log(req.body)
-// })
+app.post('/telegraf/:id', (req, res) => {
+    bot.on(message('text'), (ctx) => {
+        ctx.reply('zulkarnen ganteng sekali wkwk' + req.params.id)
+    })
+    // bot.launch()
+    console.log('telegraf path called')
+    console.log(req.body)
+})
 
 
 app.get('/', (req, res) => {
     // return res.json('ok');
 })
 
-// bot.launch({
-//     webhook: { 
-//         domain: "https://bot-netlify.vercel.app/",
-//         port:8000
-//     }
-// })
+bot.launch({
+    webhook: { 
+        domain: "https://bot-netlify.vercel.app/",
+        port:8000
+    }
+})
 
 // bot.launch();
 
