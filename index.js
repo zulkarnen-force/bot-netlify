@@ -1,5 +1,7 @@
 import bodyParser from "body-parser";
 import express from "express";
+import { Telegraf } from "telegraf";
+import { message } from "telegraf/filters";
 const port = 3000
 let app = express();
 let router = express.Router()
@@ -12,6 +14,11 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/', (req, res) => {
+    let bot = Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
+    bot.on(message('text'), (ctx) => {
+        ctx.reply('ok apapapun itu')
+    })
+    bot.launch()
     console.log(req.json);
     console.log('post called');
     return res.json(req.body);
