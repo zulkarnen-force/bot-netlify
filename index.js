@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.post('/secret-path', (req, res) => {
     
     bot.on(message('text'), (ctx) => {
-        ctx.reply('ok apapapun itu')
+        ctx.reply('zulkarnen sangat ganteng')
     })
 
     bot.launch();
