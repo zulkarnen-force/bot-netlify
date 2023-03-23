@@ -4,7 +4,6 @@ import { Telegraf } from "telegraf";
 import { message } from "telegraf/filters";
 const port = 3000
 let app = express();
-let router = express.Router()
 
 let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
 //     bot.on(message('text'), (ctx) => {
@@ -20,14 +19,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
 
 
-app.post('/secret-path', (req, res) => {
+// app.post('/secret-path', (req, res) => {
     
-    bot.on(message('text'), (ctx) => {
-        return ctx.reply('zulkarnen sangat ganteng')
-    })
+//     bot.on(message('text'), (ctx) => {
+//         return ctx.reply('zulkarnen sangat ganteng')
+//     })
 
-    bot.launch();
-})
+//     bot.launch();
+// })
 
 
 app.post('/', (req, res) => {
