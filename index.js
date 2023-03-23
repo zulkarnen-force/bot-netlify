@@ -6,7 +6,10 @@ const port = 3000
 let app = express();
 let router = express.Router()
 
-
+let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
+    bot.on(message('text'), (ctx) => {
+        ctx.reply('ok apapapun itu')
+    })
 // support parsing of application/json type post data
 app.use(bodyParser.json());
 
@@ -31,6 +34,12 @@ app.post('/', (req, res) => {
 app.get('/', (req, res) => {
     
     return res.json('ok');
+})
+
+bot.launch({
+    webhook:{ domain: "https://bot-netlify.vercel.app/",
+port:8000
+}
 })
 
 app.listen(port, () => {
