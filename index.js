@@ -21,7 +21,9 @@ bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
 
 
 app.post('/secret-path', (req, res) => {
-    console.log(req.body);
+    bot.on(message('text'), (ctx) => {
+        ctx.reply('ok apapapun itu')
+    })
 })
 
 app.post('/', (req, res) => {
