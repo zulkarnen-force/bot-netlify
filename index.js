@@ -75,7 +75,7 @@ app.get('/', (req, res) => {
 //     }
 // })
 
-bot.launch();
+// bot.launch();
 
 app.listen(port, () => {
     console.log('server running')
