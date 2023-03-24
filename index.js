@@ -38,6 +38,7 @@ app.post('/test/hook/path', (req, res) => {
         bot.on(message('text'), (ctx) => {
             return ctx.reply(`server vercel ${ctx.message.text}`)
         })
+        bot.launch();
     } catch (err) {
         console.error(err.message)
     }
