@@ -11,6 +11,10 @@ app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+// Set the bot API endpoint
+app.use(await bot.createWebhook({ domain: '127.0.0.1' }));
+bot.on("text", ctx => ctx.reply("Hello"));
+
 // app.use(bot.webhookCallback('/secret-path'));
 // bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
 
@@ -25,10 +29,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // })
 
 
-app.post('/', (req, res) => {
+// app.post('/', (req, res) => {
    
 
-})
+// })
 
 
 
@@ -52,15 +56,15 @@ app.get('/', (req, res) => {
     
 })
 
-bot.launch({
-    webhook: { 
-        domain: "https://bot-netlify.vercel.app",
-        port:8000,
-        hookPath:"/test/hook/path"
-    }
-}).then(res => {
-    console.info(`The bot ${bot.botInfo.username} is running on server`);
-}).catch(err => console.log(`bot error: ${err.message}`))
+// bot.launch({
+//     webhook: { 
+//         domain: "https://bot-netlify.vercel.app",
+//         port:8000,
+//         hookPath:"/test/hook/path"
+//     }
+// }).then(res => {
+//     console.info(`The bot ${bot.botInfo.username} is running on server`);
+// }).catch(err => console.log(`bot error: ${err.message}`))
 
 
 app.listen(port, () => {
