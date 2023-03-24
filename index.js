@@ -8,8 +8,11 @@ let app = express();
 
 let bot = new Telegraf("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
 let telegram = new Telegram("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
-app.use(await bot.createWebhook({domain: "https://a018-2001-448a-4042-15d9-109a-b130-cbbd-d255.ap.ngrok.io/"}))
-bot.on("text", ctx => ctx.reply("Hello"));
+// app.use(await bot.createWebhook({domain: ""}))
+
+bot.on(message('text'), ctx => ctx.reply("Hello"));
+bot.catch((err) => console.log(err))
+bot.launch()
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
