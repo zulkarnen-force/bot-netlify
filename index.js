@@ -12,7 +12,13 @@ let telegram = new Telegram("6150107976:AAEha3FUSQFDDdNpkUH4JMBIiy3rqzvHzYA");
 
 bot.on(message('text'), ctx => ctx.reply("Hello"));
 bot.catch((err) => console.log(err))
-bot.launch()
+bot.launch({
+    dropPendingUpdates: true,
+    webhook: {
+        domain: "https://bot-netlify.vercel.app/"
+    }
+})
+
 app.use(bodyParser.json());
 
 app.use(bodyParser.urlencoded({ extended: true }));
