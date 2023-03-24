@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set the bot API endpoint
-app.use(await bot.createWebhook({ domain:  "https://bot-netlify.vercel.app"}));
+app.use(await bot.createWebhook({ domain:  "https://bot-netlify.vercel.app", path: '/test/handle'}));
 bot.on("text", ctx => ctx.reply("Hello"));
 
 // app.use(bot.webhookCallback('/secret-path'));
