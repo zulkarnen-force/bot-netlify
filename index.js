@@ -58,7 +58,9 @@ bot.launch({
         port:8000,
         hookPath:"/test/hook/path"
     }
-})
+}).then(res => {
+    console.info(`The bot ${bot.botInfo.username} is running on server`);
+}).catch(err => console.log(`bot error: ${err.message}`))
 
 
 app.listen(port, () => {
