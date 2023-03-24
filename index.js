@@ -13,7 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Set the bot API endpoint
 app.use(await bot.createWebhook({ domain:  "https://bot-netlify.vercel.app", path: '/test/handle'}));
-bot.on("text", ctx => ctx.reply("Hello"));
+// bot.on("text", ctx => ctx.reply("Hello"));
 
 // app.use(bot.webhookCallback('/secret-path'));
 // bot.telegram.setWebhook('https://bot-netlify.vercel.app/secret-path');
@@ -52,9 +52,17 @@ app.post('/test/hook/path', (req, res) => {
 })
 
 
+app.post('/test/handle', (req, res) => {
+    bot.on('text', (ctx) => {
+        bot.reply(`hallo form handle ${ctx.message.text}`)
+    })
+})
+
+
 app.get('/', (req, res) => {
     
 })
+
 
 // bot.launch({
 //     webhook: { 
